@@ -20,7 +20,8 @@ componentDidUpdate = (prevProps) => {
     }   
 }
 fetchData = () => {     
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.props.zipCode},th&units=metric&APPID=7280756e2c689a64c9de2d525b9792bf`)       
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.props.zipCode},
+    th&units=metric&APPID=7280756e2c689a64c9de2d525b9792bf`)       
     .then((response) => response.json())       
     .then((json) => {         
         this.setState(           
@@ -43,10 +44,8 @@ render() {
         flexDirection: 'row',
         justifyContent: 'center',
         backgroundColor: 'black',
-        opacity: 0.5,
-        
-        
-
+        opacity: 0.8,
+ 
       }}>
         <ImageBackground source={background} style={styles.backdrop}>
         <Text style={styles.white}>Zip code is {this.props.zipCode}.</Text>
@@ -62,16 +61,11 @@ const styles = StyleSheet.create({
          width: '100%', 
          height: '100%',
          opacity: 0.5,
-         
-        
         },
     white: {
-        color: 'white',
+        color: 'red',
         fontSize: 24,
         textAlign:'center', 
         paddingTop: 25,
       },
-    
-    
-
 });
